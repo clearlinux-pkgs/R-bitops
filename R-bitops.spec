@@ -4,7 +4,7 @@
 #
 Name     : R-bitops
 Version  : 1.0
-Release  : 26
+Release  : 27
 URL      : http://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
 Summary  : Bitwise Operations
@@ -28,6 +28,8 @@ lib components for the R-bitops package.
 %setup -q -c -n bitops
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484530212
 
 %install
 rm -rf %{buildroot}
@@ -40,9 +42,10 @@ export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
-R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library bitops
+R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library bitops
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
