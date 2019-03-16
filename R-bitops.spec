@@ -4,14 +4,14 @@
 #
 Name     : R-bitops
 Version  : 1.0.6
-Release  : 56
-URL      : http://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
-Source0  : http://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
+Release  : 57
+URL      : https://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
 Summary  : Bitwise Operations
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-bitops-lib
-BuildRequires : clr-R-helpers
+Requires: R-bitops-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
 
@@ -32,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523291645
+export SOURCE_DATE_EPOCH=1552720589
 
 %install
+export SOURCE_DATE_EPOCH=1552720589
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523291645
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library bitops|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  bitops || :
 
 
 %files
@@ -96,10 +95,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/bitops/help/paths.rds
 /usr/lib64/R/library/bitops/html/00Index.html
 /usr/lib64/R/library/bitops/html/R.css
-/usr/lib64/R/library/bitops/libs/symbols.rds
+/usr/lib64/R/library/bitops/tests/consistency.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/bitops/libs/bitops.so
-/usr/lib64/R/library/bitops/libs/bitops.so.avx2
-/usr/lib64/R/library/bitops/libs/bitops.so.avx512
