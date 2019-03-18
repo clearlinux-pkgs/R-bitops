@@ -1,5 +1,10 @@
 # This file contains recursive sources that require this package
+R-DendSer
 R-RCurl
 R-RProtoBuf
 R-caTools
+R-corrgram
+R-dendextend
+R-gplots
 R-httr
+R-rsdmx
