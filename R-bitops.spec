@@ -4,7 +4,7 @@
 #
 Name     : R-bitops
 Version  : 1.0.6
-Release  : 69
+Release  : 70
 URL      : https://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bitops_1.0-6.tar.gz
 Summary  : Bitwise Operations
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-bitops-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 
@@ -27,21 +26,22 @@ lib components for the R-bitops package.
 
 %prep
 %setup -q -c -n bitops
+cd %{_builddir}/bitops
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571803829
+export SOURCE_DATE_EPOCH=1589517951
 
 %install
-export SOURCE_DATE_EPOCH=1571803829
+export SOURCE_DATE_EPOCH=1589517951
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
