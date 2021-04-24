@@ -1,3 +1,32 @@
+2021-04-13  Martin Maechler  <maechler@stat.math.ethz.ch>
+
+	* From Dan Robertson (dlrobertson) via GH PR #3, Feb.2016:
+	Introduce C-style  "operators":
+	"%&%", "%|%", "%^%", "%<<%", "%>>%"
+
+2021-03-30  Martin Maechler  <maechler@stat.math.ethz.ch>
+
+	* src/bit-ops.c (R_2_UINT_): cast even more, now via _2_UINT_()
+
+2021-03-24  Martin Maechler  <maechler@stat.math.ethz.ch>
+
+	* DESCRIPTION (Date, URL): cosmetic before finally releasing
+
+2020-01-03  Martin Maechler  <maechler@stat.math.ethz.ch>
+	* DESCRIPTION (Version): 1.0-7
+	* src/bit-ops.c, src/init.c: use registration; fix UBSAN detected bug
+	* man/*.Rd: more examples
+
+2013-08-17  Martin Maechler  <maechler@stat.math.ethz.ch>
+
+	* DESCRIPTION (Version): 1.0-6
+	* src/bit-ops.c: fix (Redhat package) bug.
+
+2012-11-10  Martin Maechler  <maechler@stat.math.ethz.ch>
+
+	* DESCRIPTION (Version): 1.0-5, New maintainer
+	* man/*.Rd: some cosmetics, notably '\seealso{}'s and '\link{}'s.
+
 2005-01-28  Steve Dutky  <sdutky@terpalum.umd.edu>
 	* DESCRIPTION (Version): 1.0-4
 
