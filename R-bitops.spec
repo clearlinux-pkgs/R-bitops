@@ -4,7 +4,7 @@
 #
 Name     : R-bitops
 Version  : 1.0.7
-Release  : 84
+Release  : 85
 URL      : https://cran.r-project.org/src/contrib/bitops_1.0-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bitops_1.0-7.tar.gz
 Summary  : Bitwise Operations
@@ -34,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640900029
+export SOURCE_DATE_EPOCH=1640981928
 
 %install
-export SOURCE_DATE_EPOCH=1640900029
+export SOURCE_DATE_EPOCH=1640981928
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
