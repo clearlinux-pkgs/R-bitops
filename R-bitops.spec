@@ -4,7 +4,7 @@
 #
 Name     : R-bitops
 Version  : 1.0.7
-Release  : 85
+Release  : 86
 URL      : https://cran.r-project.org/src/contrib/bitops_1.0-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bitops_1.0-7.tar.gz
 Summary  : Bitwise Operations
